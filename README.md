@@ -7,7 +7,7 @@
     - 123
     - 456
     - 789
-- los numeros van a ser al azar
+- el orden de los numeros es al azar
 - una casilla al azar muestra el numero
 - el resto de casillas ocultan su numero
 - el jugador puede seleccionar 3 casillas para mostrar el numero que oculta
