@@ -16,3 +16,10 @@
 - estas 8 opciones son las lineas de tres numeros, horizontal, vertical o diagonal
 - el objetivo de el jugador es elegir la linea que le de la mayor o menor suma posible para una mejor recompenza
 
+## Log
+    LotteryManager (Control)
+        |-GridContainer
+            |-Button1
+
+
+- Al presionar boton create_lottery se ejecuta codigo de generar array de numeros y botones que los representen

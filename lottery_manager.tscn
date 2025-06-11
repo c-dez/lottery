@@ -1,6 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://ce4fr7221ckku"]
+[gd_scene load_steps=3 format=3 uid="uid://ce4fr7221ckku"]
 
 [ext_resource type="Script" uid="uid://c0mnpwl7waw0a" path="res://lottery_manager.gd" id="1_vdysb"]
+[ext_resource type="Texture2D" uid="uid://djff4oy2gxr1h" path="res://icon.svg" id="2_uifje"]
 
-[node name="LotteryManager" type="Node"]
+[node name="LotteryManager" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_vdysb")
+
+[node name="CreateLotteryButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 332.0
+offset_top = 5.0
+offset_right = 583.0
+offset_bottom = 141.0
+text = "Create Lottery"
+icon = ExtResource("2_uifje")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 369.0
+offset_top = 264.0
+offset_right = 409.0
+offset_bottom = 304.0
+columns = 3
+
+[connection signal="button_down" from="CreateLotteryButton" to="." method="_on_create_lottery_button_button_down"]
