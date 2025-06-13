@@ -20,6 +20,15 @@
     LotteryManager (Control)
         |-GridContainer
             |-Button1
+                |-Sprite2D
+            |-...Button9
 
 
 - Al presionar boton create_lottery se ejecuta codigo de generar array de numeros y botones que los representen
+
+- TODO:
+    - crear 8 botones para cada linea horizontal, vertical y diagonal
+    - al elegir tres casillas estos botones se muestran
+    - al pasar el mouse por encima de estos botones, se resalta las casillas que este boton elige
+    - al seleccionar un boton, se muestran todas las casillas y se suma los numeros de las casillas elegidas
+    - dependiendo de la suma es la recompenza

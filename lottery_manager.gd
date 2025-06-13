@@ -28,6 +28,7 @@ func generate_lottery() -> void:
 		b.lottery_number = base_array[i]# assign number from base_array
 		b.connect("pressed", _on_button_pressed.bind(b))
 		grid_container.add_child(b)
+		b.sprite.name = "sprite%d" % i
 	
 	# chose at random 1 button and hide his var sprite and show his lottery_number
 	var rng: int = randi_range(0, base_array.size() - 1)
