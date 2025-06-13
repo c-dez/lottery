@@ -19,10 +19,10 @@ icon = ExtResource("2_uifje")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 369.0
-offset_top = 264.0
-offset_right = 409.0
-offset_bottom = 304.0
+offset_left = 413.0
+offset_top = 160.0
+offset_right = 453.0
+offset_bottom = 200.0
 columns = 3
 
 [connection signal="button_down" from="CreateLotteryButton" to="." method="_on_create_lottery_button_button_down"]
