@@ -19,10 +19,46 @@ icon = ExtResource("2_uifje")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 413.0
-offset_top = 160.0
-offset_right = 453.0
-offset_bottom = 200.0
+offset_left = 343.0
+offset_top = 153.0
+offset_right = 460.0
+offset_bottom = 332.0
 columns = 3
+
+[node name="ItemList0" type="ItemList" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="ItemList1" type="ItemList" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="ItemList2" type="ItemList" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="ItemList3" type="ItemList" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="ItemList4" type="ItemList" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="ItemList5" type="ItemList" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="ItemList6" type="ItemList" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="ItemList7" type="ItemList" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="ItemList8" type="ItemList" parent="GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
 
 [connection signal="button_down" from="CreateLotteryButton" to="." method="_on_create_lottery_button_button_down"]

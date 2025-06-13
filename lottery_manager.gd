@@ -2,6 +2,7 @@ class_name LotteryManager
 extends Control
 
 
+@export var sprite_image:Texture2D
 @onready var grid_container: GridContainer = get_node("GridContainer")
 @onready var create_lottery_button: Button = get_node("CreateLotteryButton")
 
@@ -17,35 +18,40 @@ func _process(_delta: float) -> void:
 	pass
 
 
-func generate_lottery() -> void:
+func set_buttons_data() -> void:
 	var base_array: Array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 	base_array.shuffle()
 
-	# create buttons
-	for i in range(0, base_array.size()):
-		var b: LotteryButton = LotteryButton.new()
-		b.name = "button%d" % i
-		b.lottery_number = base_array[i]# assign number from base_array
-		b.connect("pressed", _on_button_pressed.bind(b))
-		grid_container.add_child(b)
-		b.sprite.name = "sprite%d" % i
-	
-	# chose at random 1 button and hide his var sprite and show his lottery_number
+	for i in range(0, grid_container.get_child_count()):
+		var button:LotteryButton = LotteryButton.new()
+		grid_container.get_child(i).add_child(button)
+		button.name = "button%d" % i
+		button.sprite.name = "sprite%d" % i
+		button.lottery_number = base_array[i]
+		button.connect("pressed", _on_button_pressed.bind(button))
+
 	var rng: int = randi_range(0, base_array.size() - 1)
-	var button: LotteryButton = grid_container.get_child(rng)
-	button.sprite.visible = false
-	button.disabled = true
-	button.text = "%d" % button.lottery_number
-	
-	number_of_selections = 0 # reinicia numbre_of_selections
+	var b:LotteryButton = grid_container.get_child(rng).get_child(0)
+	b.sprite.visible = false
+	b.disabled = true
+	b.text = "%d" % b.lottery_number
+
+	number_of_selections = 0
+	create_lottery_button.visible = false
+
+	pass
 
 
 func _on_create_lottery_button_button_down() -> void:
-	if grid_container.get_child_count() == 0:
-		generate_lottery()
-	else:
-		for child in grid_container.get_children():
-			child.queue_free()
+	
+	if grid_container.get_child(0).get_child_count() == 0:
+		set_buttons_data()
+	# else:
+	# 	create_lottery_button.visible = false
+
+		pass
+
+	
 
 
 func _on_button_pressed(button: LotteryButton) -> void:
