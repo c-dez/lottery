@@ -12,6 +12,7 @@ config_version=5
 
 config/name="lottery"
 config/tags=PackedStringArray("testing")
+run/main_scene="uid://ce4fr7221ckku"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

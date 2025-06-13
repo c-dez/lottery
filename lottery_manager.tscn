@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ce4fr7221ckku"]
+[gd_scene load_steps=4 format=3 uid="uid://ce4fr7221ckku"]
 
 [ext_resource type="Script" uid="uid://c0mnpwl7waw0a" path="res://lottery_manager.gd" id="1_vdysb"]
 [ext_resource type="Texture2D" uid="uid://djff4oy2gxr1h" path="res://icon.svg" id="2_uifje"]
+[ext_resource type="Script" uid="uid://b64weln8bdnnb" path="res://select_column_1.gd" id="3_5op3b"]
 
 [node name="LotteryManager" type="Control"]
 layout_mode = 3
@@ -88,7 +89,7 @@ layout_mode = 2
 [node name="SelectButtonsHorizontal" type="GridContainer" parent="."]
 layout_mode = 0
 offset_left = 344.0
-offset_right = 868.0
+offset_right = 736.0
 offset_bottom = 128.0
 columns = 4
 metadata/_edit_lock_ = true
@@ -96,6 +97,12 @@ metadata/_edit_lock_ = true
 [node name="ItemList0" type="ItemList" parent="SelectButtonsHorizontal"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+
+[node name="SelectColumn1" type="Button" parent="SelectButtonsHorizontal/ItemList0"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("3_5op3b")
 
 [node name="ItemList1" type="ItemList" parent="SelectButtonsHorizontal"]
 custom_minimum_size = Vector2(128, 128)
@@ -130,3 +137,4 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 
 [connection signal="button_down" from="CreateLotteryButton" to="." method="_on_create_lottery_button_button_down"]
+[connection signal="pressed" from="SelectButtonsHorizontal/ItemList0/SelectColumn1" to="SelectButtonsHorizontal/ItemList0/SelectColumn1" method="_on_pressed"]
